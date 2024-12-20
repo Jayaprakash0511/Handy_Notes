@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('custom.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.handwritten-font {
+  font-family: 'CustomFont', cursive;
+}
+
+/* handwrittenStyles.css */
+.handwrittenEditorStyle {
+  background-color: white; /* White background */
+  color: #1a0dab;          /* Default blue ink color */
+}
+
+/* Headings */
+.handwrittenEditorStyle h1 {
+  color: #0a0073; /* Darker blue for H1 */
+}
+
+.handwrittenEditorStyle h2 {
+  color: #003366; /* A bit lighter for H2 */
+}
+
+.handwrittenEditorStyle h3 {
+  color: #004d99; /* A lighter blue for H3 */
+}
+
+.handwrittenEditorStyle h4 {
+  color: #0066cc; /* Lighter blue for H4 */
+}
+
+.handwrittenEditorStyle h5 {
+  color: #007acc; /* Even lighter blue for H5 */
+}
+
+.handwrittenEditorStyle h6 {
+  color: #3399ff; /* Lightest blue for H6 */
+}
+
+/* Bold text */
+.handwrittenEditorStyle b,
+.handwrittenEditorStyle strong {
+  color: #0b0099; /* Dark blue for bold text */
+}
+
+/* Italic text */
+.handwrittenEditorStyle i,
+.handwrittenEditorStyle em {
+  color: #007acc; /* Blue for italic text */
+  font-style: italic;
+}
+
+/* Underlined text */
+.handwrittenEditorStyle u {
+  color: #0055aa; /* Blue for underlined text */
+  text-decoration: underline;
+}
+
+/* Strikethrough text */
+.handwrittenEditorStyle s,
+.handwrittenEditorStyle del {
+  color: #990000; /* Red for strikethrough text */
+  text-decoration: line-through;
+}
+
+/* Inline code */
+.handwrittenEditorStyle code {
+  color: #d14; /* Inline code color */
+  background-color: #f4f4f4; /* Light background for code */
+  font-family: monospace;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Highlighted text */
+.handwrittenEditorStyle mark {
+  background-color: #fffa9e; /* Yellow background for highlighted text */
+  color: #333; /* Text color for highlighted text */
+}
+
+/* Links */
+.handwrittenEditorStyle a {
+  color: #0066cc; /* Blue for links */
+  text-decoration: underline;
+}
+
+.handwrittenEditorStyle a:hover {
+  color: #003366; /* Darker blue on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Lists */
+.handwrittenEditorStyle ul,
+.handwrittenEditorStyle ol {
+  color: #1a0dab; /* Default text color for lists */
+  padding-left: 20px; /* Indentation for lists */
+}
+
+.handwrittenEditorStyle li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+/* Blockquote */
+.handwrittenEditorStyle blockquote {
+  color: #888; /* Gray for blockquotes */
+  border-left: 4px solid #ccc; /* Left border for blockquote */
+  padding-left: 15px; /* Padding for blockquote */
+  font-style: italic;
+  margin: 10px 0; /* Margin for blockquote */
+}
+
+/* Horizontal rule */
+.handwrittenEditorStyle hr {
+  border: none;
+  border-top: 1px solid #ccc; /* Light gray line */
+  margin: 20px 0;
+}
+
+
+@layer base {
+  #root {
+    @apply h-full;
+  }
+
+  html,
+  body {
+    @apply h-full;
+
+    @apply select-none;
+
+    @apply bg-transparent;
+
+    @apply font-mono antialiased text-white;
+
+    @apply overflow-hidden;
+  }
+
+  header {
+    -webkit-app-region: drag;
+  }
+
+  button {
+    -webkit-app-region: no-drag;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#555] rounded-md;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+}
+
+.logo {
+    max-width: 600px; /* Adjust size as needed */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly larger */
+    }
+}
+
+.custom-button {
+  background-color: white; /* Button background color */
+  color: black; /* Button text color */
+  padding: 10px 20px; /* Padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  font-size: 1.2rem; /* Font size */
+}
+
+.custom-button:hover {
+  background-color: #e1e1e1; /* Change background on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
